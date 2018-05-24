@@ -97,3 +97,4 @@ C:\Users\vitor\source\repos\Introducao\Rotas\obj\Debug\Rotas.csproj.CoreCompileI
 C:\Users\vitor\source\repos\Introducao\Rotas\obj\Debug\Rotas.csproj.CopyComplete
 C:\Users\vitor\source\repos\Introducao\Rotas\obj\Debug\Rotas.dll
 C:\Users\vitor\source\repos\Introducao\Rotas\obj\Debug\Rotas.pdb
+C:\Users\vitor\source\repos\Introducao\Rotas\obj\Debug\Rotas.csprojAssemblyReference.cache

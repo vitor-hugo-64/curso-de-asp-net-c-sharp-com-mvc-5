@@ -1,4 +1,7 @@
-﻿@model IEnumerable<Rotas.Models.Noticia>
+﻿<!--Com está sendo passado informações através de um IEnumerable as informaçoes da View Tipada São setadas dessa forma, essa variável se encontra no HomeControler linha 12-->
+<!--Aqui é passado em forma de IEnumerable porque ele fará um for each em todas as noticias-->
+<!--No caso ele irá acessar todos os registros do array-->
+@model IEnumerable<Rotas.Models.Noticia>
 @{
     ViewBag.Title = "Home Page";
 }
@@ -10,7 +13,7 @@
         @foreach(string item in ViewBag.todasAsCategorias) // for each na variavel ViewBag
         {
             <li>
-                @Html.ActionLink(item, "MostrarCategoria", "Home", new { @categoria = item}, null)
+                @Html.ActionLink(item, "MostraCategoria", "Home", new { @categoria = item}, null)
             </li>
         }
     </ul>
@@ -25,7 +28,7 @@
                 <!--O segundo parametro é o nome da rota que sera chamada quando clicar-->
                 <!--O terceiro será o nome do controler-->
                 <!--E o quarto será os valores que serão enviados via get quando o link for clicado-->
-                @Html.ActionLink(item.Titulo, "MostrarNoticia", "Home", new {
+                @Html.ActionLink(item.Titulo, "MostraNoticia", "Home", new {
                     @noticiaId = item.NoticiaId,
                     @categoria = item.Categoria.ToLower(),
                     @titulo = item.Titulo.ToLower()

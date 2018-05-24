@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Rotas.Models.Noticia>
+@{
+    ViewBag.Title = "MostraCategoria";
+}
+
+<h2>MostraCategoria</h2>
+
+<h2>Categoria: @ViewBag.Categoria</h2>
+
+<div>
+    <ul>
+        @foreach (var item in Model) // esse for each ira pegar a variavel model que foi passada pela view tipada e ira percorrer toda ela
+        {
+            <li>
+                <!--Nesse actionLink o primeiro parametro é o texto, ou seja o o parametro titulo do objeto vai ser o texto de exibicao do link-->
+                <!--O segundo parametro é o nome da rota que sera chamada quando clicar-->
+                <!--O terceiro será o nome do controler-->
+                <!--E o quarto será os valores que serão enviados via get quando o link for clicado-->
+                @Html.ActionLink(item.Titulo, "MostraNoticia", "Home", new {
+                    @noticiaId = item.NoticiaId,
+                    @categoria = item.Categoria.ToLower(),
+                    @titulo = item.Titulo.ToLower()
+                }, null);
+
+                <em>@Html.DisplayFor(modelItem => item.Categoria);</em>
+                <b>@Html.DisplayFor(modelItem => item.Data)</b>
+
+            </li>
+
+            <div>
+                @Html.ActionLink("Todas as noticias", "TodasAsNoticias", "Home");
+            </div>
+        }
+    </ul>
+</div>

@@ -1,0 +1,15 @@
+﻿<!--Aqui não é passado um IEnumerable porque será passado através da View Tipada uma noticia especifica-->
+<!--No caso ele irá acessar um registro especifico do array bidimensional-->
+@model Rotas.Models.Noticia
+@{
+    ViewBag.Title = "MostraNoticia";
+}
+
+<h2>@Model.Titulo</h2>
+
+<em>@Model.Data - @Html.ActionLink(Model.Categoria, "MostrarCategoria", "Home", new { @categoria = Model.Categoria}, null)</em>
+
+<div>
+    @Model.Conteudo
+</div>
+
