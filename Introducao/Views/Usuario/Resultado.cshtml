@@ -1,0 +1,65 @@
+﻿<!--Dessa forma se seta os valores-->
+@model Introducao.Models.Usuario
+@{
+    ViewBag.Title = "Resultado Usuarios";
+}
+
+<h2>Listar Dados Usuários</h2>
+@Html.ValidationSummary(true) <!--// Serve para validar o formulário e reportar caso de algum erro na hora do envio, o true dentro do parenteses serve para iformar que ele só irá dar mensagem de erro no formulário e não para cada-->
+<div class="editor-label">
+    @Html.DisplayNameFor(model => model.nome)
+</div>
+<div class="editor-label">
+    @Html.DisplayFor(model => model.nome)
+    @Html.ValidationMessageFor(model => model.nome)
+</div>
+
+<div class="editor-label">
+    @Html.DisplayNameFor(model => model.observacoes)
+</div>
+<div class="editor-label">
+    @Html.DisplayFor(model => model.observacoes)
+    @Html.ValidationMessageFor(model => model.observacoes)
+</div>
+
+<div class="editor-label">
+    @Html.DisplayNameFor(model => model.idade)
+</div>
+<div class="editor-label">
+    @Html.DisplayFor(model => model.idade)
+    @Html.ValidationMessageFor(model => model.idade)
+</div>
+
+<div class="editor-label">
+    @Html.DisplayNameFor(model => model.email)
+</div>
+<div class="editor-label">
+    @Html.DisplayFor(model => model.email)
+    @Html.ValidationMessageFor(model => model.email)
+</div>
+
+<div class="editor-label">
+    @Html.DisplayNameFor(model => model.login)
+</div>
+<div class="editor-label">
+    @Html.DisplayFor(model => model.login)
+    @Html.ValidationMessageFor(model => model.login)
+</div>
+
+<div class="editor-label">
+    @Html.DisplayNameFor(model => model.senha)
+</div>
+<div class="editor-label">
+    @Html.DisplayFor(model => model.senha)
+    @Html.ValidationMessageFor(model => model.senha)
+</div>
+
+<div class="editor-label">
+    @Html.DisplayNameFor(model => model.confirmarSenha)
+</div>
+<div class="editor-label">
+    @Html.DisplayFor(model => model.confirmarSenha)
+    @Html.ValidationMessageFor(model => model.confirmarSenha)
+</div>
+
+

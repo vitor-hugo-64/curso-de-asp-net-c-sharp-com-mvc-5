@@ -1,0 +1,74 @@
+﻿@model Introducao.Models.Usuario
+@{
+    ViewBag.Title = "Usuario";
+}
+
+<h1>Controller Usuário</h1>
+<h2>Validação de Usuários</h2>
+@using (Html.BeginForm("Usuario", "Usuario", FormMethod.Post))
+{
+
+    @Html.ValidationSummary(true) // Serve para validar o formulário e reportar caso de algum erro na hora do envio, o true dentro do parenteses serve para iformar que ele só irá dar mensagem de erro no formulário e não para cada input do formulário
+    <div class="editor-label">
+        @Html.LabelFor(model => model.nome)
+    </div>
+    <div class="editor-label">
+        @Html.EditorFor(model => model.nome)
+        @Html.ValidationMessageFor(model => model.nome)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.observacoes)
+    </div>
+    <div class="editor-label">
+        @Html.TextAreaFor(model => model.observacoes)
+        @Html.ValidationMessageFor(model => model.observacoes)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.idade)
+    </div>
+    <div class="editor-label">
+        @Html.EditorFor(model => model.idade)
+        @Html.ValidationMessageFor(model => model.idade)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.email)
+    </div>
+    <div class="editor-label">
+        @Html.EditorFor(model => model.email)
+        @Html.ValidationMessageFor(model => model.email)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.login)
+    </div>
+    <div class="editor-label">
+        @Html.EditorFor(model => model.login)
+        @Html.ValidationMessageFor(model => model.login)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.senha)
+    </div>
+    <div class="editor-label">
+        @Html.PasswordFor(model => model.senha)
+        @Html.ValidationMessageFor(model => model.senha)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.confirmarSenha)
+    </div>
+    <div class="editor-label">
+        @Html.PasswordFor(model => model.confirmarSenha)
+        @Html.ValidationMessageFor(model => model.confirmarSenha)
+    </div>
+    <p><input type="submit" class="btn btn-primary>"</p>
+
+    @section Scripts{
+        @Scripts.Render("~/bundles/jqueryval") <!--linha que renderiza o jquery que valida o formulário-->
+    };
+
+}
+

@@ -1,0 +1,139 @@
+﻿<!-- dessa maneira se atribui o model do objeto na página Ex: NomeDoProjeto/PastaDeModels/Classe -->
+@model Introducao.Models.Pessoa
+@{
+    ViewBag.Title = "Inicio";
+}
+
+<h2>Curso de ASP NET MVC 5</h2>
+<p>Curso com o @ViewBag.tipoPessoa</p> <!--Dessa forma se printa com ViewBag-->
+
+<h1>@ViewData["nome"]</h1> <!--Dessa forma se printa com ViewData-->
+<p>Código Administrador: @ViewData["pessoaId"]</p>
+<button class="btn btn-danger">Button</button>
+
+<!--Dessa forma se printa com View Tipada-->
+<p>View Tipada</p>
+<h1>@Model.nome</h1>
+<h2>@Model.pessoaId</h2>
+<h3>@Model.tipo</h3>
+
+<br /><br /><br />
+<!-- Dessa forma se manda as informações de um formulário através de uma método POST -->
+<!-- Para evitar conflitos os names do input devem ter o mesmo nome das variáveis que irão receber as informações no Model -->
+<h1>Formulários com POST</h1>
+<form action="/Home/Lista" method="post">
+
+    <fieldset>
+        Informações Pessoais
+    </fieldset>
+    <br />
+    <div class="form-group">
+        <label for="codigo">Código: </label>
+        <input type="number" name="pessoaId" value="@Model.pessoaId" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="nome">Nome: </label>
+        <input type="text" name="nome" value="@Model.nome" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="tipo">Tipo: </label>
+        <input type="text" name="tipo" value="@Model.tipo" class="form-control" />
+    </div>
+    <input type="submit" name="name" value="Enviar" />
+</form>
+
+<br /><br />
+<h1>Demonstração com GET</h1>
+<form action="/Home/ListaGet" method="get">
+
+    <fieldset>
+        Informações Pessoais
+    </fieldset>
+    <br />
+    <div class="form-group">
+        <label for="codigo">Código: </label>
+        <input type="number" name="pessoaId" value="@Model.pessoaId" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="nome">Nome: </label>
+        <input type="text" name="nome" value="@Model.nome" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="tipo">Tipo: </label>
+        <input type="text" name="tipo" value="@Model.tipo" class="form-control" />
+    </div>
+    <input type="submit" name="name" value="Enviar" />
+</form>
+
+<br /><br />
+<h1>Demonstração com FormCollection</h1>
+<form action="/Home/ListaFormCollection" method="post">
+
+    <fieldset>
+        Informações Pessoais
+    </fieldset>
+    <br />
+    <div class="form-group">
+        <label for="codigo">Código: </label>
+        <input type="number" name="pessoaId" value="@Model.pessoaId" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="nome">Nome: </label>
+        <input type="text" name="nome" value="@Model.nome" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="tipo">Tipo: </label>
+        <input type="text" name="tipo" value="@Model.tipo" class="form-control" />
+    </div>
+    <input type="submit" name="name" value="Enviar" />
+</form>
+
+<br /><br />
+<h1>Demonstração com ViewTipada</h1>
+<form action="/Home/ListaTipada" method="post">
+
+    <fieldset>
+        Informações Pessoais
+    </fieldset>
+    <br />
+    <div class="form-group">
+        <label for="codigo">Código: </label>
+        <input type="number" name="pessoaId" value="@Model.pessoaId" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="nome">Nome: </label>
+        <input type="text" name="nome" value="@Model.nome" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="tipo">Tipo: </label>
+        <input type="text" name="tipo" value="@Model.tipo" class="form-control" />
+    </div>
+    <input type="submit" name="name" value="Enviar" />
+</form>
+
+<h2> Formulário com BeginForm </h2>
+@using (Html.BeginForm("Lista", "Home", FormMethod.Post))
+{
+    <div>
+        @Html.LabelFor(x => x.pessoaId)
+    </div>
+    <div>
+        @Html.EditorFor(x => x.pessoaId)
+    </div>
+    <div>
+        @Html.LabelFor(x => x.nome)
+    </div>
+    <div>
+        @Html.EditorFor(x => x.nome)
+    </div>
+    <div>
+        @Html.LabelFor(x => x.tipo)
+    </div>
+    <div>
+        @Html.EditorFor(x => x.tipo)
+    </div>
+    <input type="submit" value="Enviar" class="btn btn-primary">
+}
+    <br /><br /><br /><br />
+
+

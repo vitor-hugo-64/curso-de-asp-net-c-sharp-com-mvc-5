@@ -1,0 +1,25 @@
+﻿<!-- Aqui as informações atribuidas para a view serão armazenadas em uma variável array chamada model -->
+<!-- Sempre lembrando a forma correta de se atribuir Ex: NomeDoProjeto/PastaDeModels/ClassePessoa -->
+@model Introducao.Models.Pessoa
+@{
+    ViewBag.Title = "ListaTipada";
+}
+
+<h2>ListaTipada</h2>
+<div>
+    <!-- O Recurso LabelFor pega o nome do atributo do objeto e insere no html como label -->
+    <b>@Html.LabelFor(x => x.pessoaId) </b>@Model.pessoaId
+</div>
+<div>
+    <b>@Html.LabelFor(x => x.nome) </b>@Model.nome
+</div>
+<div>
+    <b>@Html.LabelFor(x => x.tipo)</b>@Model.tipo
+</div>
+
+@Html.ActionLink("Voltar", "Index", "Home")
+
+<h2> Formulário com BeginForm </h2>
+@using (Html.BeginForm("ListaBeginForm", "Home", FormMethod.Post))
+{
+}
