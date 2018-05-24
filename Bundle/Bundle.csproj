@@ -169,6 +169,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\comum\debug\debug.dbg.js" />
+    <Content Include="Scripts\comum\display.js" />
+    <Content Include="Scripts\comum\exemplo.js" />
+    <Content Include="Scripts\comum\setup.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
